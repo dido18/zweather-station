@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  grafana:
+    build:
+      context:  ./grafana
+      dockerfile:  Dockerfile
+      args:
+        GRAFANA_VERSION: latest
+        GF_INSTALL_PLUGINS: grafana-clock-panel,grafana-simple-json-datasource
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
+    ports:
+      - 127.0.0.1:3001:3000
+
+  app:
+    build:
+      context: ./app
+      dockerfile:  Dockerfile-python
+    volumes:
+      - ./app/ZDMgrafana.py:/home/app/app.py
+
+volumes:
+  grafana-data:

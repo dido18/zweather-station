@@ -1,0 +1,6 @@
+venv
+data
+
+zdevice.json
+gui/app/config.py
+*.pyc

@@ -1,0 +1,5 @@
+---
+config:
+    ZDM_LOG_LEVEL: 0
+    ZERYNTH_SSL: 1
+...
