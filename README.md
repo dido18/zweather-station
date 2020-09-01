@@ -1,2 +1,2 @@
 # zweather-station
-Weather station with Zerynth
+Weather station with Zerynth and Grafana
